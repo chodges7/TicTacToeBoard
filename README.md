@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started [![Build Status](https://travis-ci.com/chodges7/TicTacToeBoard.svg?branch=master)](https://travis-ci.com/chodges7/TicTacToeBoard)
 
 Build the Unit Testing CPP ("gtest") container if you have not already:
 
