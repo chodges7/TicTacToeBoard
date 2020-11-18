@@ -4,14 +4,14 @@
 
 #include <gtest/gtest.h>
 #include "TicTacToeBoard.h"
- 
+
 class TicTacToeBoardTest : public ::testing::Test
 {
 	protected:
 		TicTacToeBoardTest(){} //constructor runs before each test
 		virtual ~TicTacToeBoardTest(){} //destructor cleans up after tests
 		virtual void SetUp(){} //sets up before each test (after constructor)
-		virtual void TearDown(){} //clean up after each test, (before destructor) 
+		virtual void TearDown(){} //clean up after each test, (before destructor)
 };
 
 /* EXAMPLE TEST FORMAT
@@ -20,3 +20,29 @@ TEST(TicTacToeBoardTest, unitTestName)
 	ASSERT_TRUE(true);
 }
 */
+
+TEST(TicTacToeBoardTest, place_piece_test) {
+  TicTacToeBoard myTicTacToe;
+  int row = 1;
+  int col = 1;
+  Piece nextTurn = myTicTacToe.placePiece(row, col);
+	ASSERT_EQ(nextTurn, O);
+}
+
+TEST(TicTacToeBoardTest, invalid_place_piece_test) {
+  TicTacToeBoard myTicTacToe;
+  int row = 10;
+  int col = 10;
+  Piece nextTurn = myTicTacToe.placePiece(row, col);
+	ASSERT_EQ(nextTurn, Invalid);
+}
+
+// TEST(TicTacToeBoardTest, toggle_turn_test)
+// {
+//   TicTacToeBoard board;
+//   Piece input;
+//   input = 'O';
+//   board.toggleTurn();
+//
+// 	ASSERT_EQ(input, 'O');
+// }
