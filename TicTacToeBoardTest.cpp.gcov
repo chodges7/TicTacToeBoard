@@ -1,0 +1,50 @@
+        -:    0:Source:TicTacToeBoardTest.cpp
+        -:    0:Programs:2
+        -:    1:/**
+        -:    2: * Unit Tests for TicTacToeBoard
+        -:    3:**/
+        -:    4:
+        -:    5:#include <gtest/gtest.h>
+        -:    6:#include "TicTacToeBoard.h"
+        -:    7:
+        -:    8:class TicTacToeBoardTest : public ::testing::Test
+        -:    9:{
+        -:   10:	protected:
+        -:   11:		TicTacToeBoardTest(){} //constructor runs before each test
+        -:   12:		virtual ~TicTacToeBoardTest(){} //destructor cleans up after tests
+        -:   13:		virtual void SetUp(){} //sets up before each test (after constructor)
+        -:   14:		virtual void TearDown(){} //clean up after each test, (before destructor)
+        -:   15:};
+        -:   16:
+        -:   17:/* EXAMPLE TEST FORMAT
+        -:   18:TEST(TicTacToeBoardTest, unitTestName)
+        -:   19:{
+        -:   20:	ASSERT_TRUE(true);
+        -:   21:}
+        -:   22:*/
+        -:   23:
+        5:   24:TEST(TicTacToeBoardTest, place_piece_test) {
+        1:   25:  TicTacToeBoard myTicTacToe;
+        1:   26:  int row = 1;
+        1:   27:  int col = 1;
+        1:   28:  Piece nextTurn = myTicTacToe.placePiece(row, col);
+        1:   29:	ASSERT_EQ(nextTurn, O);
+        -:   30:}
+        -:   31:
+        5:   32:TEST(TicTacToeBoardTest, invalid_place_piece_test) {
+        1:   33:  TicTacToeBoard myTicTacToe;
+        1:   34:  int row = 10;
+        1:   35:  int col = 10;
+        1:   36:  Piece nextTurn = myTicTacToe.placePiece(row, col);
+        1:   37:	ASSERT_EQ(nextTurn, Invalid);
+        3:   38:}
+        -:   39:
+        -:   40:// TEST(TicTacToeBoardTest, toggle_turn_test)
+        -:   41:// {
+        -:   42://   TicTacToeBoard board;
+        -:   43://   Piece input;
+        -:   44://   input = 'O';
+        -:   45://   board.toggleTurn();
+        -:   46://
+        -:   47:// 	ASSERT_EQ(input, 'O');
+        -:   48:// }
