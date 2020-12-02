@@ -37,12 +37,11 @@ TEST(TicTacToeBoardTest, invalid_place_piece_test) {
 	ASSERT_EQ(nextTurn, Invalid);
 }
 
-// TEST(TicTacToeBoardTest, toggle_turn_test)
-// {
-//   TicTacToeBoard board;
-//   Piece input;
-//   input = 'O';
-//   board.toggleTurn();
-//
-// 	ASSERT_EQ(input, 'O');
-// }
+TEST(TicTacToeBoardTest, toggle_turn_test)
+{
+  TicTacToeBoard board;
+  Piece out;
+  out = board.toggleTurn();
+
+	ASSERT_EQ(out, 'O');
+}
