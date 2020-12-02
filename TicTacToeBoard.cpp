@@ -56,6 +56,11 @@ Piece TicTacToeBoard::placePiece(int row, int column) {
 **/
 Piece TicTacToeBoard::getPiece(int row, int column)
 {
+  if(row < BOARDSIZE && row > -1) {
+    if(column < BOARDSIZE && column > -1) {
+      return board[row][column];
+    }
+  }
   return Invalid;
 }
 
@@ -65,5 +70,37 @@ Piece TicTacToeBoard::getPiece(int row, int column)
 **/
 Piece TicTacToeBoard::getWinner()
 {
-  return Invalid;
+  if(board[0][0] == board[0][1] && board[0][1] == board[0][2]) {
+    return board[0][0]; // top row
+  }
+  else if(board[1][0] == board[1][1] && board[1][1] == board[1][2]) {
+    return board[1][0]; // middle row
+  }
+  else if(board[2][0] == board[2][1] && board[2][1] == board[2][2]) {
+    return board[2][0]; // bottom row
+  }
+  else if(board[0][0] == board[1][0] && board[1][0] == board[2][0]) {
+    return board[0][0]; // left column
+  }
+  else if(board[0][1] == board[1][1] && board[1][1] == board[2][1]) {
+    return board[0][1]; // middle column
+  }
+  else if(board[0][2] == board[1][2] && board[1][2] == board[2][2]) {
+    return board[0][2]; // right column
+  }
+  else if(board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+    return board[0][0]; // \ diagonal
+  }
+  else if(board[2][0] == board[1][1] && board[1][1] == board[0][2]) {
+    return board[2][0]; // / diagonal
+  }
+  // If no one's won yet check if board is empty
+  for(int i = 0; i < BOARDSIZE; i++) {
+    for(int j = 0; j < BOARDSIZE; j++) {
+      if(board[i][j] == Blank) {
+        return Invalid;
+      }
+    }
+  }
+  return Blank; // cat's game
 }
