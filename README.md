@@ -1,4 +1,4 @@
-# Getting Started [![Build Status](https://travis-ci.com/chodges7/TicTacToeBoard.svg?branch=master)](https://travis-ci.com/chodges7/TicTacToeBoard)
+# Getting Started [![Build Status](https://travis-ci.com/chodges7/TicTacToeBoard.svg?branch=master)](https://travis-ci.com/chodges7/TicTacToeBoard) [![Coverage Status](https://coveralls.io/repos/github/chodges7/TicTacToeBoard/badge.svg?branch=master)](https://coveralls.io/github/chodges7/TicTacToeBoard?branch=master)
 
 Build the Unit Testing CPP ("gtest") container if you have not already:
 
